@@ -16,7 +16,7 @@ Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{vers
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
-BuildRequires:	kf5-plasma-wayland-protocols-devel >= 1.13.0
+BuildRequires:	plasma-wayland-protocols-devel >= 1.13.0
 BuildRequires:	kf6-extra-cmake-modules
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
