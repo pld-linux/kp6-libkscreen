@@ -1,24 +1,24 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.4.5
+%define		kdeplasmaver	6.5.0
 %define		qtver		5.15.2
 %define		kpname		libkscreen
 
 Summary:	KDE screen management software
 Name:		kp6-%{kpname}
-Version:	6.4.5
-Release:	2
+Version:	6.5.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	d4ebada33e2e2f0c2215f9fea2f75b67
+# Source0-md5:	1d3036654f7b75cf838472212730a245
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
-BuildRequires:	plasma-wayland-protocols-devel >= 1.16.0
 BuildRequires:	kf6-extra-cmake-modules
 BuildRequires:	ninja
+BuildRequires:	plasma-wayland-protocols-devel >= 1.16.0
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	xz
 %requires_eq_to Qt6Core Qt6Core-devel
@@ -75,17 +75,16 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kscreen-doctor
 %attr(755,root,root) %{_prefix}/libexec/kf6/kscreen_backend_launcher
 %dir %{_libdir}/qt6/plugins/kf6/kscreen
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kscreen/KSC_Fake.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kscreen/KSC_QScreen.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kscreen/KSC_XRandR.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kscreen/KSC_KWayland.so
+%{_libdir}/qt6/plugins/kf6/kscreen/KSC_Fake.so
+%{_libdir}/qt6/plugins/kf6/kscreen/KSC_XRandR.so
+%{_libdir}/qt6/plugins/kf6/kscreen/KSC_KWayland.so
 %{_datadir}/dbus-1/services/org.kde.kscreen.service
 %{_datadir}/qlogging-categories6/libkscreen.categories
 %{systemduserunitdir}/plasma-kscreen.service
 %{zsh_compdir}/_kscreen-doctor
-%attr(755,root,root) %{_libdir}/libKF6Screen.so.*.*
+%{_libdir}/libKF6Screen.so.*.*
 %ghost %{_libdir}/libKF6Screen.so.8
-%attr(755,root,root) %{_libdir}/libKF6ScreenDpms.so.*.*
+%{_libdir}/libKF6ScreenDpms.so.*.*
 %ghost %{_libdir}/libKF6ScreenDpms.so.8
 
 %files devel
