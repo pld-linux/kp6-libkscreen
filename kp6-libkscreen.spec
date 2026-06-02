@@ -30,6 +30,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 KDE screen management software.
 
+%description -l pl.UTF-8
+Oprogramowanie do zarządzania ekranem KDE.
+
 %package devel
 Summary:	Header files for %{kpname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kpname}
