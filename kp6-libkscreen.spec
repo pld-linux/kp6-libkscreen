@@ -8,13 +8,14 @@
 Summary:	KDE screen management software
 Name:		kp6-%{kpname}
 Version:	6.7.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	b9602f88758a30207f3b1a5fdc3a33b4
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	qt6-linguist >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
 BuildRequires:	kf6-extra-cmake-modules
 BuildRequires:	ninja
