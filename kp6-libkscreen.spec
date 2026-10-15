@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.7.5
+%define		kdeplasmaver	6.8.0
 %define		qtver		5.15.2
 %define		kpname		libkscreen
 
 Summary:	KDE screen management software
 Name:		kp6-%{kpname}
-Version:	6.7.5
+Version:	6.8.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	1bcebfe90a9e7fd0d396cc5e638badb6
+# Source0-md5:	82709f931c0027c1d271ef4a6e1a59cb
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	qt6-linguist >= %{qtver}
@@ -77,14 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kpname}6_qt.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kscreen-doctor
-%attr(755,root,root) %{_prefix}/libexec/kf6/kscreen_backend_launcher
-%dir %{_libdir}/qt6/plugins/kf6/kscreen
-%{_libdir}/qt6/plugins/kf6/kscreen/KSC_Fake.so
-%{_libdir}/qt6/plugins/kf6/kscreen/KSC_XRandR.so
-%{_libdir}/qt6/plugins/kf6/kscreen/KSC_KWayland.so
-%{_datadir}/dbus-1/services/org.kde.kscreen.service
 %{_datadir}/qlogging-categories6/libkscreen.categories
-%{systemduserunitdir}/plasma-kscreen.service
 %{zsh_compdir}/_kscreen-doctor
 %{_libdir}/libKF6Screen.so.*.*
 %ghost %{_libdir}/libKF6Screen.so.8
